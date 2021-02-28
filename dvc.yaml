@@ -1,0 +1,13 @@
+stages:
+  prepare_data:
+    deps:
+      - data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz
+    cmd: gunzip -k data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz
+    outs:
+      - data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct
+  gtex:
+    deps:
+      - data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct
+    cmd: papermill --progress-bar --report-mode notebooks/gtex.ipynb data/output/notebooks/gtex.ipynb
+    outs:
+      - data/output/notebooks/gtex.ipynb

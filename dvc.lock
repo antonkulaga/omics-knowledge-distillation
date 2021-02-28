@@ -1,0 +1,20 @@
+prepare_data:
+  cmd: gunzip -k data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz
+  deps:
+  - path: data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct.gz
+    md5: ff6aade0ef5b55e38af9fef98bad760b
+    size: 1625807147
+  outs:
+  - path: data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct
+    md5: d62e948ed52f95d88ecc2b2cfdc35278
+    size: 4261582214
+gtex:
+  cmd: papermill --progress-bar --report-mode notebooks/gtex.ipynb data/output/notebooks/gtex.ipynb
+  deps:
+  - path: data/input/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct
+    md5: d62e948ed52f95d88ecc2b2cfdc35278
+    size: 4261582214
+  outs:
+  - path: data/output/notebooks/gtex.ipynb
+    md5: 8ad948b86ebe629fbb9d4f1dc548f556
+    size: 2694

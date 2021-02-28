@@ -1,0 +1,28 @@
+name: omics_kd
+channels:
+  - antonkulaga
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.8
+  - jupyterlab>=2.2.8
+  - dvc>=1.11.6
+  - papermill>=2.2.2
+  - anaconda-client>=1.7.2
+  - conda-build>=3.20.2
+  - mamba>=0.7.14
+  - scikit-learn>=0.23.2
+  - seaborn>=0.10.1
+  - more-itertools>=8.4.0
+  - statsmodels>=0.11.1
+  - optuna>=2.5.0
+  - click>=7.1.2
+  - loguru>=0.5.0
+  - plotly>=4.14.1
+  - pytorch>=1.7.1
+  - pip
+  - pip:
+    - KD-Lib
+prefix: /data/miniconda3/envs/omics_kd
+
